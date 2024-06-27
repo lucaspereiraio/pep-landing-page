@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import logo from "../assets/pep-oficial-logo.png";
+import Weather from "./Weather";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -11,19 +12,24 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center h-12 max-w-[1240px] mx-auto px-4 py-2 text-black">
-      <img
-        className="size-10 mr-4"
-        src={logo}
-        alt="Logo do Parque Estadual dos Pireneus"
-      />
-      <h1 className="w-full text-xl font-bold text-[#025949]">
-        Parque Estadual dos Pireneus - PEP
-      </h1>
-      <ul className="hidden md:flex">
+      <div className="flex items-center">
+        <img
+          className="size-10 mr-4"
+          src={logo}
+          alt="Logo do Parque Estadual dos Pireneus"
+        />
+        <h1 className="w-full text-xl font-bold text-[#025949]">
+          Parque Estadual dos Pireneus - PEP
+        </h1>
+      </div>
+      <ul className="hidden md:flex items-center">
         <li className="p-4">Início</li>
         <li className="p-4">Sobre</li>
         <li className="p-4">Esportes</li>
         <li className="p-4">Contato</li>
+        <li className="flex px-4 items-center bg-black bg-opacity-10 rounded-sm">
+          <Weather />
+        </li>
       </ul>
       <div onClick={handleNav} className="block md:hidden">
         {nav ? (
