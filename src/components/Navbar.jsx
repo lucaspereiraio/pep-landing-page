@@ -11,27 +11,35 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center h-12 max-w-[1240px] mx-auto px-4 py-2 text-black">
+    <div className="flex justify-between items-center h-16 max-w-[1240px] mx-auto px-4 py-2 text-black">
       <div className="flex items-center">
         <img
-          className="size-10 mr-4"
+          className="h-10 mr-4"
           src={logo}
           alt="Logo do Parque Estadual dos Pireneus"
         />
-        <h1 className="w-full text-xl font-bold text-[#025949]">
+        <h1 className="text-xl font-bold text-[#025949]">
           Parque Estadual dos Pireneus - PEP
         </h1>
       </div>
-      <ul className="hidden md:flex items-center">
-        <li className="p-4">Início</li>
-        <li className="p-4">Sobre</li>
-        <li className="p-4">Esportes</li>
-        <li className="p-4">Contato</li>
+      <ul className="hidden md:flex items-center space-x-4">
+        <li className="p-4 cursor-pointer hover:text-[#b3d16a] transition-colors duration-200">
+          Início
+        </li>
+        <li className="p-4 cursor-pointer hover:text-[#b3d16a] transition-colors duration-200">
+          Sobre
+        </li>
+        <li className="p-4 cursor-pointer hover:text-[#b3d16a] transition-colors duration-200">
+          Esportes
+        </li>
+        <li className="p-4 cursor-pointer hover:text-[#b3d16a] transition-colors duration-200">
+          Contato
+        </li>
         <li className="flex px-4 items-center bg-black bg-opacity-10 rounded-sm">
           <Weather />
         </li>
       </ul>
-      <div onClick={handleNav} className="block md:hidden">
+      <div onClick={handleNav} className="block md:hidden cursor-pointer">
         {nav ? (
           <AiOutlineClose size={20} color="#025949" />
         ) : (
@@ -45,21 +53,29 @@ const Navbar = () => {
             : "fixed left-[-100%]"
         }
       >
-        <div className="flex items-center py-1 px-4">
+        <div className="flex items-center pt-3 pb-1 px-4">
           <img
-            className="size-10 mr-4"
+            className="h-10 mr-4"
             src={logo}
             alt="Logo do Parque Estadual dos Pireneus"
           />
-          <h1 className="w-full text-xl font-bold text-[#025949]">
+          <h1 className="text-xl font-bold text-[#025949]">
             Parque Estadual dos Pireneus - PEP
           </h1>
         </div>
-        <ul className="uppercase">
-          <li className="p-4 border-b border-gray-600">Início</li>
-          <li className="p-4 border-b border-gray-600">Sobre</li>
-          <li className="p-4 border-b border-gray-600">Esportes</li>
-          <li className="p-4 border-b border-gray-600">Contato</li>
+        <ul className="uppercase space-y-4 px-4 py-2">
+          <li className="p-4 border-b border-gray-600 cursor-pointer hover:text-[#025949] transition-colors duration-200">
+            Início
+          </li>
+          <li className="p-4 border-b border-gray-600 cursor-pointer hover:text-[#025949] transition-colors duration-200">
+            Sobre
+          </li>
+          <li className="p-4 border-b border-gray-600 cursor-pointer hover:text-[#025949] transition-colors duration-200">
+            Esportes
+          </li>
+          <li className="p-4 border-b border-gray-600 cursor-pointer hover:text-[#025949] transition-colors duration-200">
+            Contato
+          </li>
         </ul>
       </div>
     </div>
